@@ -1,0 +1,65 @@
+R is ontstaan uit S
+S is statistical language ontwikkeld bij BELL LABS
+R Core Group controls the source code for R, maar R is open-source
+meeste functionaliteit komt vanuit packages die bouwen op de core functies
+Nadelen: 40 jaar oude tech, weinig dynamische of 3d graphics, alles moet in memory passen
+Meuk ophalen op CRAN (comprehensive R archive network)
+
+
+Help:
+- google
+- coursera discussion board
+- r-help@r-project.org
+
+
+Datatypes:
+primitives: char=string, numeric=real, integer (42L), complex, logical=bool
+objects:    vector, list
+
+Vectors:
+lege vector via `vector()` gevulde vector via `c(1,2,3,4,5)`  moet dezelfde type elementen bevatten.
+een List mag andere types bevatten.   `list(1,2,3)`
+
+Matrix:  vector met dimensie nrows, ncolumns   `matrix(1:100, nrow=10  [,ncol=10])`
+Cartesisch product maken van sequences via `cbind` en `rbind`   `cbind(x,y)` 
+
+
+Casting/Coerce:    `as.numeric(..)`,   `as.logical(....)`
+
+
+Factors:   zijn enums (waardes die een naampje hebben)
+
+NA = missing/notavailable, NaN = not a number
+is.na(..)    is.nan(...)
+
+Data Frame = `data.frame(..)` =  tabel met data  (zeg maar een matrix waarbij je meerder datatype kan hebben, met row en column names)
+
+Names: je kunt alle objecten een labeltje geven
+
+
+
+Data inlezen uit files:  read.table/read.csv,   readLines,   source (R code inlezen), dget (="eval"), load, unserialize
+Data schrijven:          write.table/write.csv, writeLines,  dump,     dput (="repr"), save, serialize
+
+Efficient data inlezen:  niet meer dan RAM, geef de types van de kolommen van tevoren aan.
+
+
+Logical operators :  | vs || ( & vs && ):   & = vectorized, && = beschouwt alleen eerste element van vector.
+
+
+Hoe werkt R?: 1. Everything that exists is an object. 2. Everything that happens is a function call.
+
+
+
+Functies en control structures (while, for, repeat, break) lijken heel erg op C.
+'return' niet nodig (net als scala)
+blerp <- function(x,y) {
+    x + y
+}
+Functies zijn objecten. Je kun anonymous functions maken.
+
+
+Ellipsis ... = variable length arguments
+Unpacking:  met:     args<-list(...)  ;  args[ ["paramname"] ]     
+
+

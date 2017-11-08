@@ -1,0 +1,39 @@
+COURSERA DATA SCIENCE
+
+WEEK 3
+
+Types of Data Science Questions
+
+
+descriptive:
+    doel is alleen beschrijven van de data set
+exploratory:
+    doel is relaties ontdekken die je eerst nog niet kende
+inferential:
+    gebruik de observaties van een kleine sample om uitspraak te doen over grotere dataset door beredeneerde extrapolatie.
+predictive:
+    op basis van de data van sommige objecten iets voorspellen over de data van andere objecten. Hier heb je een goede scheiding van je populaties nodig
+    (variance) om een goede voorspelling te doen.
+causal:
+    ontdekken wat er met een bepaalde variabele gebeurt als een andere variable wijzigt  ('X wordt groter dan wordt Y kleiner')
+    "gold standard" van data analysis
+mechanistic:
+    welke exacte veranderingen in variabelen op welke precieze manier leiden tot veranderingen voor andere objecten.
+    
+let op: correlatie is niet direct causaal verband!
+
+
+Data Science gaat als eerste over de vraag die je wilt beantwoorden! Data volgt de vraag.  Data beperkt vragen of maakt andere vragen weer mogelijk.
+
+
+Experiment(al) Design  : denk goed na over je experiment en analyse. Welke (statistische) methodes worden er gebruikt, en wat betekent dat.
+
+
+Confounding Variables:  andere variabelen (die je misschien negeert) die andere variabelen gelijktijdig beinvoloeden zodat het lijkt dat die anderen een correlatie hebben. Maar de correlatie is op basis van de confounding variable
+Hoe vermijd je dat?  
+Door in het experiment:
+- de variabele vast te zetten (b.v. jaar is altijd 2016)
+- "stratify" de variabele, dwz gelijke verdeling maken over de subpopulaties (strata)
+- randomizen: verdeel dingen willekeurig, om afhankelijkheid te doorbreken
+
+
