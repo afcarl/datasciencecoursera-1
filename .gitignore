@@ -6,3 +6,6 @@
 .Ruserdata
 *.kate-swp
 .httr-oauth
+*.csv
+*.pdf
+
