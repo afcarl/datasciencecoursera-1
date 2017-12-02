@@ -1,12 +1,16 @@
 # week 1 question 1-5
 
-# download.file(url='https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv', destfile='housingidaho.csv')
+if(!file.exists("housingidaho.csv")) {
+    download.file(url='https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv', destfile='housingidaho.csv')
+}
 csv <- read.csv('housingidaho.csv')
 answer <- length(csv[which(csv$VAL==24), 'VAL'])
 print(c("answer1", answer))
 
 
-#download.file(url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx", destfile="naturalgas.xlsx")
+if(!file.exists("naturalgas.xlsx")) {
+    download.file(url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx", destfile="naturalgas.xlsx")
+}
 
 library(xlsx)
 dat<-read.xlsx("naturalgas.xlsx", sheetIndex = 1, rowIndex = 18:23, colIndex=7:15)
@@ -14,7 +18,9 @@ answer <- sum(dat$Zip*dat$Ext,na.rm=T)
 print(c("answer3", answer))
 
 
-# download.file(url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml", destfile="restaurants.xml")
+if(!file.exists("restaurants.xml")) {
+    download.file(url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml", destfile="restaurants.xml")
+}
 library(XML)
 restdata <- xmlTreeParse("restaurants.xml", useInternal=TRUE)
 restdata <- xmlRoot(restdata)[[1]]    # <row> contains all <row> elements
@@ -27,7 +33,9 @@ num_zipcodes2 = sum(zipcodes==21231)
 print(c("answer4b", num_zipcodes2))
 
 
-#download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv", destfile="comm.csv")
+if(!file.exists("comm.csv")) {
+    download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv", destfile="comm.csv")
+}
 library(data.table)
 DT<-fread("comm.csv")
 
