@@ -43,6 +43,7 @@ rankings <- dplyr::summarize(grouped_by_incomegrp, mean=mean(rank))
 print("answer4"); print(rankings)
 
 # question 5
+library(Hmisc)
 dt <- tbl_df(merged) %>%
     select(Income.Group, rank) %>%
     mutate(quant = cut2(rank, g=5))        #  cut2 from hmisc g=number of quantile groups
