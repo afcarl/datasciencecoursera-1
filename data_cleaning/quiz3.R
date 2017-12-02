@@ -31,7 +31,7 @@ names(gdp) <- c("CountryCode", "rank", "countryname", "gdp")    # rename
 gdp <- filter(gdp, CountryCode!="", rank!="")   # remove empty
 gdp <- mutate(gdp, rank=parse_number(rank), gdp=parse_number(gdp))   # fix numbers
 edstats <- read.csv("edstats.csv", stringsAsFactors = FALSE)
-merged <- merge(edstats, gdp, by.x="CountryCode", by="CountryCode", all=FALSE)
+merged <- merge(edstats, gdp, by="CountryCode", all=FALSE)
 merged <- merged[order(merged$gdp),]
 answer1 <- nrow(merged)
 answer2 <- merged[13, "Long.Name"]
