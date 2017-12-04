@@ -33,7 +33,8 @@ if(!file.exists("edstats.csv")) {
 
 edstats <- read.csv("edstats.csv", stringsAsFactors = FALSE)
 merged <- merge(edstats, gdp, by="CountryCode", all=FALSE)
-have_fiscal_year <- startsWith(merged$Special.Notes, "Fiscal year")
+# have_fiscal_year <- startsWith(merged$Special.Notes, "Fiscal year")
+have_fiscal_year <- grepl("^Fiscal.year", merged$Special.Notes)
 with_fy <- merged[which(have_fiscal_year), ]
 answer <- length(with_fy[grepl("June", with_fy$Special.Notes),1])
 print("question 4"); print(answer)
